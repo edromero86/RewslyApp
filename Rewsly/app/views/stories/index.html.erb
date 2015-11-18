@@ -1,0 +1,13 @@
+<h1>Welcome to Rewsly!</h1>
+
+<%= form_tag "/", method: "GET" do %>
+  <%= text_field_tag :q, params[:q] %>
+  <%= submit_tag "Search" %>
+<% end %>
+
+<%= link_to 'Create New', new_story_path %>
+<%= link_to 'Popular', stories_popular_path %>
+
+<% @stories.each do |story| %>
+  <h2><%= link_to story.title, story_path( story ) %></h2>
+<% end %>

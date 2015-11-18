@@ -1,0 +1,34 @@
+<%= form_for @story do |s| %>
+<% if @story.errors.any? %>
+  <h2>There were errors saving your story</h2>
+  <ul>
+    <% @story.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+  <p>
+  <%= s.label :title %> 
+  <%= s.text_field :title %> 
+  </p>
+  
+  <p>
+  <%= s.label :category %> 
+  <%= s.text_field :category %> 
+  </p>
+  
+  <p>
+  <%= s.label :upvotes %> 
+  <%= s.number_field :upvotes %> 
+  </p>
+  
+  <p>
+  <%= s.label :url %> 
+  <%= s.url_field :url %> 
+  </p>
+  
+  <p>
+  <%= s.submit %>
+  </p> 
+<% end %>
